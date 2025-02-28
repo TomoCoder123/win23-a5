@@ -29,3 +29,9 @@ if $CALCULATOR 3 @ 2; then  # If the return code of $PROGRAM is zero (i.e. succe
   echo 'ERROR! An invalid run of the application (3 @ 2) apparently succeeded?!'
   exit 1
 fi
+
+# Test 04: Ensure program errors when dividing by zero
+if $CALCULATOR 10 / 0; then
+  echo 'ERROR! Division by zero did not return an error!'
+  exit 1
+fi
