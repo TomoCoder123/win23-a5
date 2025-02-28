@@ -35,3 +35,9 @@ if $CALCULATOR 10 / 0; then
   echo 'ERROR! Division by zero did not return an error!'
   exit 1
 fi
+
+# Test 05: Ensure calculator correctly handles negative numbers
+if [[ $($CALCULATOR -5 + 3) -ne -2 ]]; then
+  echo 'ERROR! A valid run of the calculator (-5 + 3) failed to produce -2 as an output!'
+  exit 1
+fi
